@@ -18,7 +18,9 @@ export async function POST(req: Request) {
 
     const { userId } = session.metadata || { userId: null }
 
-    if (!userId) return new Response(null, { status: 400 })
+    if (!userId) {
+      return new Response("Invalid metadata", { status: 400 })
+    }
 
     await db.user.update({
       where: { id: userId },
@@ -26,5 +28,5 @@ export async function POST(req: Request) {
     })
   }
 
-  return new Response("OK", { status: 200 })
+  return new Response("OK")
 }

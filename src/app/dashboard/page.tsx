@@ -26,7 +26,7 @@ const DashboardPage = async ({ searchParams }: PageProps) => {
   })
 
   if (!user) {
-    redirect("/sign-in")
+    redirect("/welcome")
   }
 
   const breadcrumbs = [{ name: "Dashboard" }]

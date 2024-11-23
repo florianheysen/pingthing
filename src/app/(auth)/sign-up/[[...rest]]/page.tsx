@@ -5,7 +5,7 @@ import { SignUp } from "@clerk/nextjs"
 const SignUpPage = () => {
   return (
     <section className="flex items-center justify-center h-full">
-      <SignUp />
+      <SignUp fallbackRedirectUrl="/welcome" forceRedirectUrl="/welcome" />
     </section>
   )
 }
